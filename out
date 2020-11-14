@@ -1,0 +1,138 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  generation: 0
+  image:
+    dockerImageLayers: null
+    dockerImageMetadata: null
+    metadata:
+      creationTimestamp: null
+  kind: ImageStreamTag
+  lookupPolicy:
+    local: false
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+      openshift.io/imported-from: temps:latest
+    creationTimestamp: null
+    labels:
+      app: temps
+      app.kubernetes.io/component: temps
+      app.kubernetes.io/instance: temps
+    name: temps:latest
+  tag:
+    annotations: null
+    from:
+      kind: DockerImage
+      name: temps:latest
+    generation: null
+    importPolicy: {}
+    name: latest
+    referencePolicy:
+      type: ""
+- apiVersion: build.openshift.io/v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: null
+    labels:
+      app: temps
+      app.kubernetes.io/component: temps
+      app.kubernetes.io/instance: temps
+    name: temps
+  spec:
+    nodeSelector: null
+    output:
+      to:
+        kind: ImageStreamTag
+        name: temps:latest
+    postCommit: {}
+    resources: {}
+    source:
+      contextDir: temps
+      git:
+        uri: https://github.com/mazmarz/DO180-apps.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: ImageStreamTag
+          name: php:7.3
+          namespace: openshift
+      type: Source
+    triggers:
+    - github:
+        secret: yuGTU3uiMn3ivuJAazyX
+      type: GitHub
+    - generic:
+        secret: awSm_3WGPbwXowDOjuim
+      type: Generic
+    - type: ConfigChange
+    - imageChange: {}
+      type: ImageChange
+  status:
+    lastVersion: 0
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"temps:latest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"temps\")].image"}]'
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: null
+    labels:
+      app: temps
+      app.kubernetes.io/component: temps
+      app.kubernetes.io/instance: temps
+    name: temps
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        deployment: temps
+    strategy: {}
+    template:
+      metadata:
+        annotations:
+          openshift.io/generated-by: OpenShiftNewApp
+        creationTimestamp: null
+        labels:
+          deployment: temps
+      spec:
+        containers:
+        - image: ' '
+          name: temps
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          - containerPort: 8443
+            protocol: TCP
+          resources: {}
+  status: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: null
+    labels:
+      app: temps
+      app.kubernetes.io/component: temps
+      app.kubernetes.io/instance: temps
+    name: temps
+  spec:
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: 8443-tcp
+      port: 8443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      deployment: temps
+  status:
+    loadBalancer: {}
+kind: List
+metadata: {}
