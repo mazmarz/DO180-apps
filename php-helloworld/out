@@ -1,0 +1,840 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "openshift-sdn",
+          "interface": "eth0",
+          "ips": [
+              "10.131.0.21"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    k8s.v1.cni.cncf.io/networks-status: |-
+      [{
+          "name": "openshift-sdn",
+          "interface": "eth0",
+          "ips": [
+              "10.131.0.21"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    openshift.io/build.name: php-helloworld-2
+    openshift.io/scc: privileged
+  creationTimestamp: "2021-01-01T23:09:49Z"
+  labels:
+    openshift.io/build.name: php-helloworld-2
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:openshift.io/build.name: {}
+        f:labels:
+          .: {}
+          f:openshift.io/build.name: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"876d3cf3-24a7-46ae-b91c-9bb928b6bae8"}:
+            .: {}
+            f:apiVersion: {}
+            f:controller: {}
+            f:kind: {}
+            f:name: {}
+            f:uid: {}
+      f:spec:
+        f:activeDeadlineSeconds: {}
+        f:containers:
+          k:{"name":"sti-build"}:
+            .: {}
+            f:args: {}
+            f:command: {}
+            f:env:
+              .: {}
+              k:{"name":"ALLOWED_UIDS"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_BLOBCACHE_DIR"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_ISOLATION"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_REGISTRIES_CONF_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_REGISTRIES_DIR_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_SIGNATURE_POLICY_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_STORAGE_CONF_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_STORAGE_DRIVER"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"DROP_CAPS"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"HTTP_PROXY"}:
+                .: {}
+                f:name: {}
+              k:{"name":"HTTPS_PROXY"}:
+                .: {}
+                f:name: {}
+              k:{"name":"LANG"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"NO_PROXY"}:
+                .: {}
+                f:name: {}
+              k:{"name":"PULL_DOCKERCFG_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"PUSH_DOCKERCFG_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"SOURCE_CONTEXT_DIR"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"SOURCE_REPOSITORY"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"SOURCE_URI"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:securityContext:
+              .: {}
+              f:privileged: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/tmp/build"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/cache/blobs"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/lib/containers/cache"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/lib/containers/storage"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/lib/kubelet/config.json"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/run/configs/openshift.io/build-system"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+                f:readOnly: {}
+              k:{"mountPath":"/var/run/configs/openshift.io/certs"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/run/secrets/openshift.io/pull"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+                f:readOnly: {}
+              k:{"mountPath":"/var/run/secrets/openshift.io/push"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+                f:readOnly: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:initContainers:
+          .: {}
+          k:{"name":"git-clone"}:
+            .: {}
+            f:args: {}
+            f:command: {}
+            f:env:
+              .: {}
+              k:{"name":"ALLOWED_UIDS"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_BLOBCACHE_DIR"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_REGISTRIES_CONF_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_REGISTRIES_DIR_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_SIGNATURE_POLICY_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_STORAGE_CONF_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"DROP_CAPS"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"HTTP_PROXY"}:
+                .: {}
+                f:name: {}
+              k:{"name":"HTTPS_PROXY"}:
+                .: {}
+                f:name: {}
+              k:{"name":"LANG"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"NO_PROXY"}:
+                .: {}
+                f:name: {}
+              k:{"name":"SOURCE_CONTEXT_DIR"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"SOURCE_REPOSITORY"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"SOURCE_URI"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/tmp/build"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/cache/blobs"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/run/configs/openshift.io/build-system"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+                f:readOnly: {}
+              k:{"mountPath":"/var/run/configs/openshift.io/certs"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+          k:{"name":"manage-dockerfile"}:
+            .: {}
+            f:args: {}
+            f:command: {}
+            f:env:
+              .: {}
+              k:{"name":"ALLOWED_UIDS"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_BLOBCACHE_DIR"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_REGISTRIES_CONF_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_REGISTRIES_DIR_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_SIGNATURE_POLICY_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"BUILD_STORAGE_CONF_PATH"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"DROP_CAPS"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"HTTP_PROXY"}:
+                .: {}
+                f:name: {}
+              k:{"name":"HTTPS_PROXY"}:
+                .: {}
+                f:name: {}
+              k:{"name":"LANG"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"NO_PROXY"}:
+                .: {}
+                f:name: {}
+              k:{"name":"SOURCE_CONTEXT_DIR"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"SOURCE_REPOSITORY"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"SOURCE_URI"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/tmp/build"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/cache/blobs"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/run/configs/openshift.io/build-system"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+                f:readOnly: {}
+              k:{"mountPath":"/var/run/configs/openshift.io/certs"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+        f:nodeSelector:
+          .: {}
+          f:kubernetes.io/os: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:serviceAccount: {}
+        f:serviceAccountName: {}
+        f:terminationGracePeriodSeconds: {}
+        f:volumes:
+          .: {}
+          k:{"name":"build-blob-cache"}:
+            .: {}
+            f:emptyDir: {}
+            f:name: {}
+          k:{"name":"build-ca-bundles"}:
+            .: {}
+            f:configMap:
+              .: {}
+              f:defaultMode: {}
+              f:items: {}
+              f:name: {}
+            f:name: {}
+          k:{"name":"build-proxy-ca-bundles"}:
+            .: {}
+            f:configMap:
+              .: {}
+              f:defaultMode: {}
+              f:items: {}
+              f:name: {}
+            f:name: {}
+          k:{"name":"build-system-configs"}:
+            .: {}
+            f:configMap:
+              .: {}
+              f:defaultMode: {}
+              f:name: {}
+            f:name: {}
+          k:{"name":"buildcachedir"}:
+            .: {}
+            f:hostPath:
+              .: {}
+              f:path: {}
+              f:type: {}
+            f:name: {}
+          k:{"name":"builder-dockercfg-d4799-pull"}:
+            .: {}
+            f:name: {}
+            f:secret:
+              .: {}
+              f:defaultMode: {}
+              f:secretName: {}
+          k:{"name":"builder-dockercfg-d4799-push"}:
+            .: {}
+            f:name: {}
+            f:secret:
+              .: {}
+              f:defaultMode: {}
+              f:secretName: {}
+          k:{"name":"buildworkdir"}:
+            .: {}
+            f:emptyDir: {}
+            f:name: {}
+          k:{"name":"container-storage-root"}:
+            .: {}
+            f:emptyDir: {}
+            f:name: {}
+          k:{"name":"node-pullsecrets"}:
+            .: {}
+            f:hostPath:
+              .: {}
+              f:path: {}
+              f:type: {}
+            f:name: {}
+    manager: openshift-controller-manager
+    operation: Update
+    time: "2021-01-01T23:09:49Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:k8s.v1.cni.cncf.io/network-status: {}
+          f:k8s.v1.cni.cncf.io/networks-status: {}
+    manager: multus
+    operation: Update
+    time: "2021-01-01T23:09:51Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:initContainerStatuses: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.131.0.21"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2021-01-01T23:10:48Z"
+  name: php-helloworld-2-build
+  namespace: chpt6
+  ownerReferences:
+  - apiVersion: build.openshift.io/v1
+    controller: true
+    kind: Build
+    name: php-helloworld-2
+    uid: 876d3cf3-24a7-46ae-b91c-9bb928b6bae8
+  resourceVersion: "533372"
+  selfLink: /api/v1/namespaces/chpt6/pods/php-helloworld-2-build
+  uid: 21384fbe-a0df-4291-b179-73352b4bfa01
+spec:
+  activeDeadlineSeconds: 604800
+  containers:
+  - args:
+    - --loglevel=0
+    command:
+    - openshift-sti-build
+    env:
+    - name: BUILD
+      value: |
+        {"kind":"Build","apiVersion":"build.openshift.io/v1","metadata":{"name":"php-helloworld-2","namespace":"chpt6","selfLink":"/apis/build.openshift.io/v1/namespaces/chpt6/builds/php-helloworld-2","uid":"876d3cf3-24a7-46ae-b91c-9bb928b6bae8","resourceVersion":"533048","creationTimestamp":"2021-01-01T23:09:48Z","labels":{"app":"php-helloworld","app.kubernetes.io/component":"php-helloworld","app.kubernetes.io/instance":"php-helloworld","buildconfig":"php-helloworld","openshift.io/build-config.name":"php-helloworld","openshift.io/build.start-policy":"Serial"},"annotations":{"openshift.io/build-config.name":"php-helloworld","openshift.io/build.number":"2"},"ownerReferences":[{"apiVersion":"build.openshift.io/v1","kind":"BuildConfig","name":"php-helloworld","uid":"52356e17-22a3-424c-b7de-8e92fdf605ea","controller":true}],"managedFields":[{"manager":"openshift-apiserver","operation":"Update","apiVersion":"build.openshift.io/v1","time":"2021-01-01T23:09:48Z","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:openshift.io/build-config.name":{},"f:openshift.io/build.number":{}},"f:labels":{".":{},"f:app":{},"f:app.kubernetes.io/component":{},"f:app.kubernetes.io/instance":{},"f:buildconfig":{},"f:openshift.io/build-config.name":{},"f:openshift.io/build.start-policy":{}},"f:ownerReferences":{".":{},"k:{\"uid\":\"52356e17-22a3-424c-b7de-8e92fdf605ea\"}":{".":{},"f:apiVersion":{},"f:controller":{},"f:kind":{},"f:name":{},"f:uid":{}}}},"f:spec":{"f:output":{"f:to":{".":{},"f:kind":{},"f:name":{}}},"f:serviceAccount":{},"f:source":{"f:contextDir":{},"f:git":{".":{},"f:uri":{}},"f:type":{}},"f:strategy":{"f:sourceStrategy":{".":{},"f:from":{".":{},"f:kind":{},"f:name":{}},"f:pullSecret":{".":{},"f:name":{}}},"f:type":{}},"f:triggeredBy":{}},"f:status":{"f:conditions":{".":{},"k:{\"type\":\"New\"}":{".":{},"f:lastTransitionTime":{},"f:lastUpdateTime":{},"f:status":{},"f:type":{}}},"f:config":{".":{},"f:kind":{},"f:name":{},"f:namespace":{}},"f:phase":{}}}}]},"spec":{"serviceAccount":"builder","source":{"type":"Git","git":{"uri":"https://github.com/mazmarz/DO180-apps"},"contextDir":"php-helloworld"},"strategy":{"type":"Source","sourceStrategy":{"from":{"kind":"DockerImage","name":"image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:ad7ef00584865153a31e8103da3c142435bc1b701aa08e92692af5acecb13a07"},"pullSecret":{"name":"builder-dockercfg-d4799"}}},"output":{"to":{"kind":"DockerImage","name":"image-registry.openshift-image-registry.svc:5000/chpt6/php-helloworld:latest"},"pushSecret":{"name":"builder-dockercfg-d4799"}},"resources":{},"postCommit":{},"nodeSelector":null,"triggeredBy":[{"message":"Manually triggered"}]},"status":{"phase":"New","outputDockerImageReference":"image-registry.openshift-image-registry.svc:5000/chpt6/php-helloworld:latest","config":{"kind":"BuildConfig","namespace":"chpt6","name":"php-helloworld"},"output":{},"conditions":[{"type":"New","status":"True","lastUpdateTime":"2021-01-01T23:09:48Z","lastTransitionTime":"2021-01-01T23:09:48Z"}]}}
+    - name: LANG
+      value: en_US.utf8
+    - name: SOURCE_REPOSITORY
+      value: https://github.com/mazmarz/DO180-apps
+    - name: SOURCE_URI
+      value: https://github.com/mazmarz/DO180-apps
+    - name: SOURCE_CONTEXT_DIR
+      value: php-helloworld
+    - name: ALLOWED_UIDS
+      value: 1-
+    - name: DROP_CAPS
+      value: KILL,MKNOD,SETGID,SETUID
+    - name: PUSH_DOCKERCFG_PATH
+      value: /var/run/secrets/openshift.io/push
+    - name: PULL_DOCKERCFG_PATH
+      value: /var/run/secrets/openshift.io/pull
+    - name: BUILD_REGISTRIES_CONF_PATH
+      value: /var/run/configs/openshift.io/build-system/registries.conf
+    - name: BUILD_REGISTRIES_DIR_PATH
+      value: /var/run/configs/openshift.io/build-system/registries.d
+    - name: BUILD_SIGNATURE_POLICY_PATH
+      value: /var/run/configs/openshift.io/build-system/policy.json
+    - name: BUILD_STORAGE_CONF_PATH
+      value: /var/run/configs/openshift.io/build-system/storage.conf
+    - name: BUILD_STORAGE_DRIVER
+      value: overlay
+    - name: BUILD_ISOLATION
+      value: chroot
+    - name: BUILD_BLOBCACHE_DIR
+      value: /var/cache/blobs
+    - name: HTTP_PROXY
+    - name: HTTPS_PROXY
+    - name: NO_PROXY
+    image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:93020988178801dbe0a77b57527b379e2e73e4cfc929d39af18d6d883ad24110
+    imagePullPolicy: IfNotPresent
+    name: sti-build
+    resources: {}
+    securityContext:
+      privileged: true
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: FallbackToLogsOnError
+    volumeMounts:
+    - mountPath: /var/lib/kubelet/config.json
+      name: node-pullsecrets
+    - mountPath: /tmp/build
+      name: buildworkdir
+    - mountPath: /var/lib/containers/cache
+      name: buildcachedir
+    - mountPath: /var/run/secrets/openshift.io/push
+      name: builder-dockercfg-d4799-push
+      readOnly: true
+    - mountPath: /var/run/secrets/openshift.io/pull
+      name: builder-dockercfg-d4799-pull
+      readOnly: true
+    - mountPath: /var/run/configs/openshift.io/build-system
+      name: build-system-configs
+      readOnly: true
+    - mountPath: /var/run/configs/openshift.io/certs
+      name: build-ca-bundles
+    - mountPath: /etc/pki/ca-trust/extracted/pem
+      name: build-proxy-ca-bundles
+    - mountPath: /var/lib/containers/storage
+      name: container-storage-root
+    - mountPath: /var/cache/blobs
+      name: build-blob-cache
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: builder-token-pxdmz
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  imagePullSecrets:
+  - name: builder-dockercfg-d4799
+  initContainers:
+  - args:
+    - --loglevel=0
+    command:
+    - openshift-git-clone
+    env:
+    - name: BUILD
+      value: |
+        {"kind":"Build","apiVersion":"build.openshift.io/v1","metadata":{"name":"php-helloworld-2","namespace":"chpt6","selfLink":"/apis/build.openshift.io/v1/namespaces/chpt6/builds/php-helloworld-2","uid":"876d3cf3-24a7-46ae-b91c-9bb928b6bae8","resourceVersion":"533048","creationTimestamp":"2021-01-01T23:09:48Z","labels":{"app":"php-helloworld","app.kubernetes.io/component":"php-helloworld","app.kubernetes.io/instance":"php-helloworld","buildconfig":"php-helloworld","openshift.io/build-config.name":"php-helloworld","openshift.io/build.start-policy":"Serial"},"annotations":{"openshift.io/build-config.name":"php-helloworld","openshift.io/build.number":"2"},"ownerReferences":[{"apiVersion":"build.openshift.io/v1","kind":"BuildConfig","name":"php-helloworld","uid":"52356e17-22a3-424c-b7de-8e92fdf605ea","controller":true}],"managedFields":[{"manager":"openshift-apiserver","operation":"Update","apiVersion":"build.openshift.io/v1","time":"2021-01-01T23:09:48Z","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:openshift.io/build-config.name":{},"f:openshift.io/build.number":{}},"f:labels":{".":{},"f:app":{},"f:app.kubernetes.io/component":{},"f:app.kubernetes.io/instance":{},"f:buildconfig":{},"f:openshift.io/build-config.name":{},"f:openshift.io/build.start-policy":{}},"f:ownerReferences":{".":{},"k:{\"uid\":\"52356e17-22a3-424c-b7de-8e92fdf605ea\"}":{".":{},"f:apiVersion":{},"f:controller":{},"f:kind":{},"f:name":{},"f:uid":{}}}},"f:spec":{"f:output":{"f:to":{".":{},"f:kind":{},"f:name":{}}},"f:serviceAccount":{},"f:source":{"f:contextDir":{},"f:git":{".":{},"f:uri":{}},"f:type":{}},"f:strategy":{"f:sourceStrategy":{".":{},"f:from":{".":{},"f:kind":{},"f:name":{}},"f:pullSecret":{".":{},"f:name":{}}},"f:type":{}},"f:triggeredBy":{}},"f:status":{"f:conditions":{".":{},"k:{\"type\":\"New\"}":{".":{},"f:lastTransitionTime":{},"f:lastUpdateTime":{},"f:status":{},"f:type":{}}},"f:config":{".":{},"f:kind":{},"f:name":{},"f:namespace":{}},"f:phase":{}}}}]},"spec":{"serviceAccount":"builder","source":{"type":"Git","git":{"uri":"https://github.com/mazmarz/DO180-apps"},"contextDir":"php-helloworld"},"strategy":{"type":"Source","sourceStrategy":{"from":{"kind":"DockerImage","name":"image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:ad7ef00584865153a31e8103da3c142435bc1b701aa08e92692af5acecb13a07"},"pullSecret":{"name":"builder-dockercfg-d4799"}}},"output":{"to":{"kind":"DockerImage","name":"image-registry.openshift-image-registry.svc:5000/chpt6/php-helloworld:latest"},"pushSecret":{"name":"builder-dockercfg-d4799"}},"resources":{},"postCommit":{},"nodeSelector":null,"triggeredBy":[{"message":"Manually triggered"}]},"status":{"phase":"New","outputDockerImageReference":"image-registry.openshift-image-registry.svc:5000/chpt6/php-helloworld:latest","config":{"kind":"BuildConfig","namespace":"chpt6","name":"php-helloworld"},"output":{},"conditions":[{"type":"New","status":"True","lastUpdateTime":"2021-01-01T23:09:48Z","lastTransitionTime":"2021-01-01T23:09:48Z"}]}}
+    - name: LANG
+      value: en_US.utf8
+    - name: SOURCE_REPOSITORY
+      value: https://github.com/mazmarz/DO180-apps
+    - name: SOURCE_URI
+      value: https://github.com/mazmarz/DO180-apps
+    - name: SOURCE_CONTEXT_DIR
+      value: php-helloworld
+    - name: ALLOWED_UIDS
+      value: 1-
+    - name: DROP_CAPS
+      value: KILL,MKNOD,SETGID,SETUID
+    - name: BUILD_REGISTRIES_CONF_PATH
+      value: /var/run/configs/openshift.io/build-system/registries.conf
+    - name: BUILD_REGISTRIES_DIR_PATH
+      value: /var/run/configs/openshift.io/build-system/registries.d
+    - name: BUILD_SIGNATURE_POLICY_PATH
+      value: /var/run/configs/openshift.io/build-system/policy.json
+    - name: BUILD_STORAGE_CONF_PATH
+      value: /var/run/configs/openshift.io/build-system/storage.conf
+    - name: BUILD_BLOBCACHE_DIR
+      value: /var/cache/blobs
+    - name: HTTP_PROXY
+    - name: HTTPS_PROXY
+    - name: NO_PROXY
+    image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:93020988178801dbe0a77b57527b379e2e73e4cfc929d39af18d6d883ad24110
+    imagePullPolicy: IfNotPresent
+    name: git-clone
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: FallbackToLogsOnError
+    volumeMounts:
+    - mountPath: /tmp/build
+      name: buildworkdir
+    - mountPath: /var/run/configs/openshift.io/build-system
+      name: build-system-configs
+      readOnly: true
+    - mountPath: /var/run/configs/openshift.io/certs
+      name: build-ca-bundles
+    - mountPath: /etc/pki/ca-trust/extracted/pem
+      name: build-proxy-ca-bundles
+    - mountPath: /var/cache/blobs
+      name: build-blob-cache
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: builder-token-pxdmz
+      readOnly: true
+  - args:
+    - --loglevel=0
+    command:
+    - openshift-manage-dockerfile
+    env:
+    - name: BUILD
+      value: |
+        {"kind":"Build","apiVersion":"build.openshift.io/v1","metadata":{"name":"php-helloworld-2","namespace":"chpt6","selfLink":"/apis/build.openshift.io/v1/namespaces/chpt6/builds/php-helloworld-2","uid":"876d3cf3-24a7-46ae-b91c-9bb928b6bae8","resourceVersion":"533048","creationTimestamp":"2021-01-01T23:09:48Z","labels":{"app":"php-helloworld","app.kubernetes.io/component":"php-helloworld","app.kubernetes.io/instance":"php-helloworld","buildconfig":"php-helloworld","openshift.io/build-config.name":"php-helloworld","openshift.io/build.start-policy":"Serial"},"annotations":{"openshift.io/build-config.name":"php-helloworld","openshift.io/build.number":"2"},"ownerReferences":[{"apiVersion":"build.openshift.io/v1","kind":"BuildConfig","name":"php-helloworld","uid":"52356e17-22a3-424c-b7de-8e92fdf605ea","controller":true}],"managedFields":[{"manager":"openshift-apiserver","operation":"Update","apiVersion":"build.openshift.io/v1","time":"2021-01-01T23:09:48Z","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:openshift.io/build-config.name":{},"f:openshift.io/build.number":{}},"f:labels":{".":{},"f:app":{},"f:app.kubernetes.io/component":{},"f:app.kubernetes.io/instance":{},"f:buildconfig":{},"f:openshift.io/build-config.name":{},"f:openshift.io/build.start-policy":{}},"f:ownerReferences":{".":{},"k:{\"uid\":\"52356e17-22a3-424c-b7de-8e92fdf605ea\"}":{".":{},"f:apiVersion":{},"f:controller":{},"f:kind":{},"f:name":{},"f:uid":{}}}},"f:spec":{"f:output":{"f:to":{".":{},"f:kind":{},"f:name":{}}},"f:serviceAccount":{},"f:source":{"f:contextDir":{},"f:git":{".":{},"f:uri":{}},"f:type":{}},"f:strategy":{"f:sourceStrategy":{".":{},"f:from":{".":{},"f:kind":{},"f:name":{}},"f:pullSecret":{".":{},"f:name":{}}},"f:type":{}},"f:triggeredBy":{}},"f:status":{"f:conditions":{".":{},"k:{\"type\":\"New\"}":{".":{},"f:lastTransitionTime":{},"f:lastUpdateTime":{},"f:status":{},"f:type":{}}},"f:config":{".":{},"f:kind":{},"f:name":{},"f:namespace":{}},"f:phase":{}}}}]},"spec":{"serviceAccount":"builder","source":{"type":"Git","git":{"uri":"https://github.com/mazmarz/DO180-apps"},"contextDir":"php-helloworld"},"strategy":{"type":"Source","sourceStrategy":{"from":{"kind":"DockerImage","name":"image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:ad7ef00584865153a31e8103da3c142435bc1b701aa08e92692af5acecb13a07"},"pullSecret":{"name":"builder-dockercfg-d4799"}}},"output":{"to":{"kind":"DockerImage","name":"image-registry.openshift-image-registry.svc:5000/chpt6/php-helloworld:latest"},"pushSecret":{"name":"builder-dockercfg-d4799"}},"resources":{},"postCommit":{},"nodeSelector":null,"triggeredBy":[{"message":"Manually triggered"}]},"status":{"phase":"New","outputDockerImageReference":"image-registry.openshift-image-registry.svc:5000/chpt6/php-helloworld:latest","config":{"kind":"BuildConfig","namespace":"chpt6","name":"php-helloworld"},"output":{},"conditions":[{"type":"New","status":"True","lastUpdateTime":"2021-01-01T23:09:48Z","lastTransitionTime":"2021-01-01T23:09:48Z"}]}}
+    - name: LANG
+      value: en_US.utf8
+    - name: SOURCE_REPOSITORY
+      value: https://github.com/mazmarz/DO180-apps
+    - name: SOURCE_URI
+      value: https://github.com/mazmarz/DO180-apps
+    - name: SOURCE_CONTEXT_DIR
+      value: php-helloworld
+    - name: ALLOWED_UIDS
+      value: 1-
+    - name: DROP_CAPS
+      value: KILL,MKNOD,SETGID,SETUID
+    - name: BUILD_REGISTRIES_CONF_PATH
+      value: /var/run/configs/openshift.io/build-system/registries.conf
+    - name: BUILD_REGISTRIES_DIR_PATH
+      value: /var/run/configs/openshift.io/build-system/registries.d
+    - name: BUILD_SIGNATURE_POLICY_PATH
+      value: /var/run/configs/openshift.io/build-system/policy.json
+    - name: BUILD_STORAGE_CONF_PATH
+      value: /var/run/configs/openshift.io/build-system/storage.conf
+    - name: BUILD_BLOBCACHE_DIR
+      value: /var/cache/blobs
+    - name: HTTP_PROXY
+    - name: HTTPS_PROXY
+    - name: NO_PROXY
+    image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:93020988178801dbe0a77b57527b379e2e73e4cfc929d39af18d6d883ad24110
+    imagePullPolicy: IfNotPresent
+    name: manage-dockerfile
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: FallbackToLogsOnError
+    volumeMounts:
+    - mountPath: /tmp/build
+      name: buildworkdir
+    - mountPath: /var/run/configs/openshift.io/build-system
+      name: build-system-configs
+      readOnly: true
+    - mountPath: /var/run/configs/openshift.io/certs
+      name: build-ca-bundles
+    - mountPath: /etc/pki/ca-trust/extracted/pem
+      name: build-proxy-ca-bundles
+    - mountPath: /var/cache/blobs
+      name: build-blob-cache
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: builder-token-pxdmz
+      readOnly: true
+  nodeName: ip-10-0-145-152.eu-central-1.compute.internal
+  nodeSelector:
+    kubernetes.io/os: linux
+  priority: 0
+  restartPolicy: Never
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: builder
+  serviceAccountName: builder
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - hostPath:
+      path: /var/lib/kubelet/config.json
+      type: File
+    name: node-pullsecrets
+  - hostPath:
+      path: /var/lib/containers/cache
+      type: ""
+    name: buildcachedir
+  - emptyDir: {}
+    name: buildworkdir
+  - name: builder-dockercfg-d4799-push
+    secret:
+      defaultMode: 384
+      secretName: builder-dockercfg-d4799
+  - name: builder-dockercfg-d4799-pull
+    secret:
+      defaultMode: 384
+      secretName: builder-dockercfg-d4799
+  - configMap:
+      defaultMode: 420
+      name: php-helloworld-2-sys-config
+    name: build-system-configs
+  - configMap:
+      defaultMode: 420
+      items:
+      - key: service-ca.crt
+        path: certs.d/image-registry.openshift-image-registry.svc:5000/ca.crt
+      name: php-helloworld-2-ca
+    name: build-ca-bundles
+  - configMap:
+      defaultMode: 420
+      items:
+      - key: ca-bundle.crt
+        path: tls-ca-bundle.pem
+      name: php-helloworld-2-global-ca
+    name: build-proxy-ca-bundles
+  - emptyDir: {}
+    name: container-storage-root
+  - emptyDir: {}
+    name: build-blob-cache
+  - name: builder-token-pxdmz
+    secret:
+      defaultMode: 420
+      secretName: builder-token-pxdmz
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-01T23:09:55Z"
+    reason: PodCompleted
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-01T23:10:48Z"
+    reason: PodCompleted
+    status: "False"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-01T23:10:48Z"
+    reason: PodCompleted
+    status: "False"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-01T23:09:49Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: cri-o://899dba7c372350e1f936ac52f4b4d81bb0d390a80dd867914f45d24d1b8f0172
+    image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:93020988178801dbe0a77b57527b379e2e73e4cfc929d39af18d6d883ad24110
+    imageID: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:93020988178801dbe0a77b57527b379e2e73e4cfc929d39af18d6d883ad24110
+    lastState: {}
+    name: sti-build
+    ready: false
+    restartCount: 0
+    started: false
+    state:
+      terminated:
+        containerID: cri-o://899dba7c372350e1f936ac52f4b4d81bb0d390a80dd867914f45d24d1b8f0172
+        exitCode: 0
+        finishedAt: "2021-01-01T23:10:47Z"
+        reason: Completed
+        startedAt: "2021-01-01T23:09:55Z"
+  hostIP: 10.0.145.152
+  initContainerStatuses:
+  - containerID: cri-o://c766d9a4b9c5e1310f9c09bff6883e73895d28710f93bf8bc74edd87318f3116
+    image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:93020988178801dbe0a77b57527b379e2e73e4cfc929d39af18d6d883ad24110
+    imageID: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:93020988178801dbe0a77b57527b379e2e73e4cfc929d39af18d6d883ad24110
+    lastState: {}
+    name: git-clone
+    ready: true
+    restartCount: 0
+    state:
+      terminated:
+        containerID: cri-o://c766d9a4b9c5e1310f9c09bff6883e73895d28710f93bf8bc74edd87318f3116
+        exitCode: 0
+        finishedAt: "2021-01-01T23:09:53Z"
+        reason: Completed
+        startedAt: "2021-01-01T23:09:51Z"
+  - containerID: cri-o://41f6cf56f13dc220f86ac988360cdc606abc116ea7908284b9e6820e7f48c6e4
+    image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:93020988178801dbe0a77b57527b379e2e73e4cfc929d39af18d6d883ad24110
+    imageID: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:93020988178801dbe0a77b57527b379e2e73e4cfc929d39af18d6d883ad24110
+    lastState: {}
+    name: manage-dockerfile
+    ready: true
+    restartCount: 0
+    state:
+      terminated:
+        containerID: cri-o://41f6cf56f13dc220f86ac988360cdc606abc116ea7908284b9e6820e7f48c6e4
+        exitCode: 0
+        finishedAt: "2021-01-01T23:09:54Z"
+        reason: Completed
+        startedAt: "2021-01-01T23:09:54Z"
+  phase: Succeeded
+  podIP: 10.131.0.21
+  podIPs:
+  - ip: 10.131.0.21
+  qosClass: BestEffort
+  startTime: "2021-01-01T23:09:49Z"
